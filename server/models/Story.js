@@ -7,15 +7,17 @@ const choiceSchema = new Schema({
   text: {
     type: String,
   },
-  next_story: {
-      type: Schema.Types.ObjectId,
-      ref: "Story" // story model name
+  next_story_id: {
+      type: Number,
   }
 })
 
 
 // class Story extends Model {}
 const storySchema = new Schema({
+  story_id: {
+    type: Number
+  },
   story: {
     type: String,
     required: true

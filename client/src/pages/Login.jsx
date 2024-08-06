@@ -2,17 +2,36 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../App.css'; 
 
-const Auth = () => {
+import { LOGIN_USER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+
+import auth from "../utils/auth";
+
+const Login = () => {
   const [loginName, setLoginName] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [signupName, setSignupName] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const navigate = useNavigate();
+  const [loginUser] = useMutation(LOGIN_USER)
+
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     console.log("Login Name:", loginName);
     console.log("Login Password:", loginPassword);
+
+
+    const response = await loginUser({
+      variables: {  
+        "username": loginName,
+        "password": loginPassword
+      }
+    })
+
+    const token = response.data.login.token;
+    auth.login(token)
+
   };
 
   const handleSignupSubmit = async (e) => {
@@ -107,4 +126,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Login;

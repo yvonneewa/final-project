@@ -1,29 +1,37 @@
 const db = require('../config/connection');
-const { User, Thought } = require('../models');
+
+const { User, Story } = require('../models');
 const userSeeds = require('./userSeeds.json');
-// const thoughtSeeds = require('./thoughtSeeds.json');
-const storySeeds = require('./userData.json');
+const storyData = require('./storyData.json');
 const cleanDB = require('./cleanDB');
 
-db.once('open', async () => {
+const seedDatabase = async () => {
   try {
-    await cleanDB('Thought', 'thoughts');
+    await db;
+ 
 
-    await cleanDB('User', 'users');
+    await User.deleteMany({});
+    await Story.deleteMany({});
 
-    await User.create(userSeeds);
+    const users = await User.create(userSeeds);
 
-    for (let i = 0; i < thoughtSeeds.length; i++) {
-      const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: thoughtAuthor },
-        {
-          $addToSet: {
-            thoughts: _id,
-          },
-        }
-      );
+    for (const story of storyData) {
+      const newStory = await Story.create({
+        ...story,
+        user_id: users[Math.floor(Math.random() * users.length)].id,
+      });
+
+      if (storyData.has_choice && storyData.choices) {
+        // Link choices to stories
+        story.choices = storyData.choices.map(choice => ({
+          text: choice.text,
+          next_story: choice.next_story_id, // Ensure these IDs are handled correctly
+        }));
+        await newStory.save();
+      }
     }
+
+    console.log('Stories seeded');
   } catch (err) {
     console.error(err);
     process.exit(1);
@@ -31,4 +39,5 @@ db.once('open', async () => {
 
   console.log('all done!');
   process.exit(0);
-});
+};
+seedDatabase();
