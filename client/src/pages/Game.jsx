@@ -1,6 +1,10 @@
 import StorySection from "../components/StorySection.jsx";
 
 function Game() {
+
+  // implement query for getting the current story data of the user
+  
+  
   return (
     <>
       <div className="game-page">                

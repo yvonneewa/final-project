@@ -1,10 +1,11 @@
 const typeDefs = `
   type Choice {
     text: String
-    next_story: ID
+    next_story_id: ID
   }
 
   type Story {
+    story_id: ID
     story: String
     user: User
     has_choice: Boolean

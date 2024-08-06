@@ -30,7 +30,7 @@ const resolvers = {
 
         // find story based of received nextStoryId
         const foundStory = await Story.findOne({
-          _id: args.nextStoryId
+          story_id: args.nextStoryId
         })
 
         if(!foundStory) {
@@ -42,8 +42,6 @@ const resolvers = {
           {_id: context.user._id},
           {current_story: foundStory._id}
         )
-
-
         return foundStory;
 
       }
