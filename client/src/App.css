@@ -1,0 +1,325 @@
+/* General body styling */
+
+/* Game Page Background */
+.game-page {
+  background-image: url('/images/background1.jpg'); /* Ensure the file path is correct */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  background-position: center; /* Center the background image */
+  min-height: 100vh; /* Ensure the background covers the entire viewport height */
+  width: 100%; /* Ensure the background covers the entire width of the container */
+  overflow: hidden; /* Hide any overflow, if necessary */
+}
+
+.home-page{
+  background-image: url('/images/HD-wallpaper-darkness-in-the-forest-creepy-forest-nature-dark.jpg');
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  background-position: center; /* Center the background image */
+  min-height: 100vh; /* Ensure the background covers the entire viewport height */
+  width: 100%; /* Ensure the background covers the entire width of the container */
+  overflow: hidden; /* Hide any overflow, if necessary */
+}
+
+
+/* Ensure correct path and file extension */
+.login-signup-page {
+  background-image: url('/images/background4.jpg'); /* Adjust path and extension as needed */
+  background-size: cover; /* Cover the entire container */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  overflow: hidden; /* Hide overflow if needed */
+  justify-content: center;
+
+}
+
+/* Additional CSS for auth container */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Optional: Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px; /* Optional: Limit the width */
+}
+
+
+
+body {
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50x
+}
+
+/* Header styling */
+header {
+  width: 100%; /* Ensures the header spans the full width of the viewport */
+  padding: 10px 20px; /* Adds space inside the header */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  border-bottom: 5px solid #666666; /* Adds a border at the bottom of the header */
+  background: #1a1a1a; /* Sets the background color of the header */
+  display: flex; /* Uses Flexbox for layout */
+  justify-content: space-between; /* Distributes space between child elements */
+  align-items: center; /* Vertically centers child elements */
+  position: relative; /* Allows for positioning of child elements if needed */
+  min-height: 60px; /* Optional: Ensures the header has a minimum height */
+}
+
+
+/* Button styles */
+.no-button, .start-button, .play-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.no-button {
+  color: #ff6666;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #ff99cc;
+  text-decoration: underline;
+}
+
+.play-button {
+  padding: 10px 20px;
+  color: #ff6666;
+  font-size: 40px;
+  font-family: 'Creepy-Regular', sans-serif;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  
+}
+
+.start-button:hover {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+.play-button img {
+  width: 100px;
+  height: auto;
+}
+
+
+/* Font face declarations */
+@font-face {
+  font-family: 'Creepy-Regular';
+  src: url('/fonts/Creepster-Regular.ttf') format('truetype');
+}
+
+/* Story section styles */
+.story-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: whitesmoke;
+  font-family: 'cursive', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.story-text p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Choice buttons container styling */
+.choice-buttons-container {
+  display: flex; /* Enable flexbox */
+  flex-direction: row; /* Arrange buttons in a row */
+  gap: 100px; /* Spacing between choice buttons */
+  margin-top: 20px; /* Space above the choices */
+  justify-content: center; /* Center buttons horizontally */
+}
+
+/* Choice button styling */
+.choice-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.choice-button:hover {
+  background-color: #555; 
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.nav-links {
+  display:flex;
+  gap: 20px; 
+  text-decoration: none;
+  color: #ffffff; 
+  font-size: 16px; 
+}
+
+/* Optional: Add styles for hover effects if desired */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Animation styles */
+.fade-in-title {
+  animation: fadeIn 20s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.one-word-by-one {
+  color: #ff99cc;
+  font-family: "Courier";
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end);
+}
+
+@keyframes type {
+  from { width: 0; }
+}
+
+/* Button container for spacing */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  gap: 100px;
+  padding: 15px 20px;
+}
+
+#back-button, #next-button {
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+#back-button {
+  order: 1;
+}
+
+#next-button {
+  order: 2;
+}
+
+/* Input styling */
+.transparent-input { 
+  background: none; 
+  border: none;
+} 
+
+input { 
+  width: 300px; 
+  height: 40px; 
+  font-size: 24px; 
+  color: #ffffff;
+}
+
+/* Home button styling */
+#return-home-button {
+  transform: scale(4);
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+}
+
+/* Title container styling */
+.title-container {
+  background: url('/images/title-background.jpg'); 
+  background-repeat: no-repeat;
+  padding: 50px; 
+  text-align: center; /* Center-aligns the text inside this container */
+  margin-top: 20px; /* Optional: Adds some spacing above the title */
+}
+
+
+
+/* Container for forms side by side */
+.forms-container {
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-between; /* Space between the forms */
+  gap: 20px; /* Optional: Adds some space between the forms */
+  max-width: 1200px; /* Optional: Limits the width of the forms container */
+  width: 100%; /* Ensure it fits within the container */
+}
+
+/* Common form styling */
+.form {
+  flex: 1; /* Ensures forms take up equal space */
+  max-width: 500px; /* Limits width of each form */
+  background: #333; /* Background color for form */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for forms */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+}
+
+/* Styling for form input fields and buttons */
+.form-input {
+  width: 100%; /* Full width for input fields */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  background-color: #007bff; /* Button color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form login-form, .form signup-form{
+  display: block;
+  } 
+  
+  .creepster {
+    font-family: 'Creepster', cursive; /* Ensure the font is applied */
+    font-size: 10rem; /* Adjust the size as needed */
+    color: #fff; /* Adjust the color as needed */
+    text-align: center; /* Center-aligns the text inside this container */
+
+  }
+
