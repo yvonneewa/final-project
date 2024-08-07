@@ -138,15 +138,23 @@ header {
   line-height: 1.5;
   text-align: justify;
 }
+.two-choices{
+  display: flex; /* Enable flexbox */
+  flex-direction: row; /* Arrange buttons in a row */
+  gap: 200px; /* Spacing between choice buttons */
+  margin-top: 20px; /* Space above the choices */
+  justify-content: center; /* Center buttons horizontally */
+}
 
 /* Choice buttons container styling */
 .choice-buttons-container {
   display: flex; /* Enable flexbox */
   flex-direction: row; /* Arrange buttons in a row */
-  gap: 100px; /* Spacing between choice buttons */
+  gap: 200px; /* Spacing between choice buttons */
   margin-top: 20px; /* Space above the choices */
   justify-content: center; /* Center buttons horizontally */
 }
+
 
 /* Choice button styling */
 .choice-button {
@@ -157,6 +165,7 @@ header {
   cursor: pointer;
   border-radius: 5px;
   font-size: 18px;
+  gap: 200px; 
 }
 
 .choice-button:hover {
