@@ -242,7 +242,7 @@ input {
   width: 300px; 
   height: 40px; 
   font-size: 24px; 
-  color: #ffffff;
+  color: #151313;
 }
 
 /* Home button styling */
@@ -311,10 +311,7 @@ input {
   margin-bottom: 15px;
 }
 
-.form login-form, .form signup-form{
-  display: block;
-  } 
-  
+
   .creepster {
     font-family: 'Creepster', cursive; /* Ensure the font is applied */
     font-size: 10rem; /* Adjust the size as needed */
