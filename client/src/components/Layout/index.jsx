@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
-import './AppLayout.css';
+// import React from 'react';
+// import { Link } from 'react-router-dom'; 
+// import './AppLayout.css';
 
-const AppLayout = ({ children, loggedIn }) => {
-  return (
+// const AppLayout = ({ children, loggedIn }) => {
+//   return (
    
-  );
-};
+//   );
+// };
 
-export default AppLayout;
+// export default AppLayout;

@@ -1,5 +1,5 @@
 import React from "react";
-import Auth from "./utils/auth";
+import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import {
@@ -35,29 +35,33 @@ const client = new ApolloClient({
 });
 
 const App = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleLogout = () => {
+    localStorage.removeItem('id_token'); // Remove token from local storage
+    navigate('/'); // Redirect to home or login page
+  };
+
   function checkGameRoute() {
     const currentUrl = window.location.href;
-    console.log(currentUrl);
     const splitUrl = currentUrl.split("/");
-    console.log(splitUrl);
-
     const lastWord = splitUrl[splitUrl.length - 1];
-    console.log(lastWord);
-
-    return lastWord == "game";
+    return lastWord === "game"; // Changed to strict equality
   }
+
+  // Check if the user is logged in
+  const loggedIn = !!localStorage.getItem('id_token');
 
   return (
     <ApolloProvider client={client}>
       <div className="flex-column justify-space-around">
         <header className="display-flex justify-space-between align-center p-2">
           <nav>
-            {Auth.loggedIn() ? (
-              <button className="no-button" id="logout">
+            {loggedIn ? (
+              <button className="no-button" id="logout" onClick={handleLogout}>
                 Logout
               </button>
             ) : (
-              // <Link to="/login">Login</Link>
               <>
                 <div className="nav-links">
                   <a href="/" className="nav-link home-link">
