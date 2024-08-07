@@ -22,6 +22,7 @@ const StorySection = ({
 
   };
 
+  
   return (
     <div className="story-container">
       <div>
@@ -39,11 +40,11 @@ const StorySection = ({
       </div>
       {!story.is_dead && !story.escaped && (
         <div>
-          {!story.disable_go_back && (
+          {/* {!story.disable_go_back && (
             <button id="back-button" onClick={() => handleChoiceSelect("back")}>
               Back
             </button>
-          )}
+          )} */}
           <Choices
             choices={story.choices}
             onChoiceSelect={handleChoiceSelect}
