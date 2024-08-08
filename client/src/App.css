@@ -32,7 +32,7 @@
   width: 100%; /* Full width */
   overflow: hidden; /* Hide overflow if needed */
   justify-content: center;
-
+ 
 }
 
 /* Additional CSS for auth container */
@@ -313,6 +313,7 @@ input {
 
 .form login-form, .form signup-form{
   display: block;
+
   } 
   
   .creepster {
