@@ -37,6 +37,15 @@ function Game() {
     setStoryData(response.data.goNextStory);
   }
 
+  async function clickBack() {
+    const response = await goNextStory({
+      variables: {
+        nextStoryId: parseInt(storyData.story_id) - 1,
+      },
+    });
+
+    setStoryData(response.data.goNextStory);
+  }
   return (
     <>
       <div className="game-page">
@@ -52,7 +61,10 @@ function Game() {
             />
 
             {storyData?.choices?.length == 0 ? (
-              <button onClick={clickNext}>Next Button</button>
+              <button onClick={clickNext}>Next</button>
+            ) : null}
+            {storyData?.choices?.length == 0  && !storyData?.disable_go_back ?(
+              <button onClick={clickBack}>Back</button>
             ) : null}
           </div>
         </div>
