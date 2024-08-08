@@ -9,7 +9,8 @@ body {
 
 /* Game Page Background */
 .game-page {
-  background-image: url('/images/background1.jpg'); /* Ensure the file path is correct */
+  background-color: black;
+  /* background-image: url('/images/background1.jpg'); Ensure the file path is correct */
   background-size: cover; /* Ensure the background covers the entire container */
   background-repeat: no-repeat; /* Prevent repeating the background image */
   background-position: center; /* Center the background image */
@@ -250,7 +251,7 @@ header {
 
 input { 
   width: 100%; /* Full width on smaller screens */
-  max-width: 300px; /* Limit the width */
+  /* max-width: 300px; Limit the width */
   height: 40px; 
   font-size: 1.5em; /* Responsive font size */
   color: #151313;
