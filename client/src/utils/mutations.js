@@ -1,12 +1,28 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
+
+export const GO_NEXT_STORY = gql`
+  mutation goNextStory($nextStoryId: ID!) {
+    goNextStory(nextStoryId: $nextStoryId) {
+      story
+      is_dead
+      has_choice
+      disable_go_back
+      choices {
+        text
+        next_story_id
+      }
+      story_id
+    }
+  }
+`;
 
 export const LOGIN_USER = gql`
   mutation login($username: String!, $password: String!) {
-  login(username: $username, password: $password) {
-    token
+    login(username: $username, password: $password) {
+      token
+    }
   }
-}
-`
+`;
 
 // Define your mutations
 export const CREATE_USER = gql`
