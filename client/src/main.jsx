@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 
 import App from "./App.jsx";
 import Home from "./pages/Home";
@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Game from "./pages/Game";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+
+import auth from "./utils/auth.js";
 
 
 
@@ -27,10 +29,11 @@ const router = createBrowserRouter([
       // },
       {
         path: "/signup",
-        element: <Signup />,
+        element: <Login />,
       },
       {
         path: "/game",
+        loader: () => (!auth.loggedIn() ? redirect('/signup') : null),
         element: <Game />,
       },
       // {

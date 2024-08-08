@@ -1,46 +1,69 @@
-# DEAD END
-
 ## Description
 
-DEAD END is an enthralling immersive experience that puts the player into the story. It takes input from the user and really makes them feel like their choices are effecting the outcome of how the game will go. Using advanced realism technologies and new age cutting text graphics, this is truly a once in a lifetime opprotunity you will surely not forget for years to come even if you wanted to. The goal with DEAD END was always and forever will be fun for the people. We use the ideals that if we are not having fun writing and coding the story then how could the user have fun playing? So everyday of work is a day of fun for us here at DEAD END!
+**DEAD END** is an enthralling immersive experience that puts the player into the story. It takes input from the user and makes them feel like their choices are affecting the outcome of the game. Utilizing advanced realism technologies and cutting-edge text graphics, DEAD END is a once-in-a-lifetime opportunity you'll surely remember for years to come. Our goal with DEAD END has always been—and will always be—to provide fun for players. We believe that if we are not having fun writing and coding the story, how could the user have fun playing? So every day of work is a day of fun for us here at DEAD END!
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [References](#references)
 - [License](#license)
 
 ## Installation
 
-N/A
+Steps
+- Clone the repository:
+bash
+- Copy code
+- git clone https://github.com/your-username/your-repository.git
+- Navigate into the project directory:
+bash
+- Copy code
+- cd your-repository
+- Install dependencies:
+bash
+- Copy code
+- npm install
 
 ## Usage
 
-First and foremost! go to the website https://visualnovel.onrender.com/ once you are there you will be greated by a skull(don't worry he is friendly) and the title of the game. In the center of the screen you will see a start button you can click that to start the game. But wait! You first should probably sign in. So i would highly reccomend you click the little login button in the upper left. Once there you can sign in on the left side of the screen. DO NOT PANIC if you do not have an account simply look a couple inches to the right and you can make one. Once you have either signed in or made an account you will be taken back to the homepage with the skull.(he is still friendly.) Now you may click start game and begin the experience. Throughout the game you will be prompted to enter your name, and you will have many choices to make. Don't worry if you make the wrong choice you will be prompted with a button to return to the homepage and try again. Enjoy the game!
+1. Visit the website: [https://deadend.onrender.com](https://deadend.onrender.com).
+2. You will be greeted by a friendly skull and the game title.
+3. Click the "Start Game" button in the center of the screen. Before doing this, you should sign in:
+   - Click the "Login" button in the upper left.
+   - Sign in on the left side of the screen. If you don’t have an account, you can create one easily.
+4. After signing in or creating an account, you will return to the homepage with the friendly skull.
+5. Click "Start Game" to begin the experience.
+6. Throughout the game, you will be prompted to enter your name and make various choices.
+7. If you make an incorrect choice, you will be given an option to return to the homepage and try again.
 
-Concept:
-![The pathing idea](images/concept.png)
+Enjoy the game!
 
-Homepage:
-![The pathing idea](images/homepage.png)
+## Concept
 
-Game:
-![The pathing idea](images/game.png)
+![Concept](images/concept.png)
+
+## Homepage
+
+![Homepage](images/homepage.png)
+
+## Game
+
+![Game](images/game.png)
 
 ## Credits
 
-Shelly- https://github.com/namahage1
-Yvonne- https://github.com/yvonneewa
+- Shelly: [GitHub Profile](https://github.com/namahage1)
+- Yvonne: [GitHub Profile](https://github.com/yvonneewa)
 
+## References
 
-##  References
-- images 
-[   ararn](https://www.artstation.com/)
- https://wallpapercave.com/spooky-forest-wallpapers
- ??
-
+- Images:
+  - [ArtStation](https://www.artstation.com/)
+  - [Spooky Forest Wallpapers](https://wallpapercave.com/spooky-forest-wallpapers)
 
 ## License
+MIT License
+---
 
-Please refer to the LICENSE in the repo.
