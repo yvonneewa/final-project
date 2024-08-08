@@ -2,7 +2,7 @@
 body {
   color: #ffffff;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16px; /* Adjusted for readability */
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -11,54 +11,99 @@ body {
 .game-page {
   background-color: black;
   /* background-image: url('/images/background1.jpg'); Ensure the file path is correct */
-  background-size: cover; /* Ensure the background covers the entire container */
-  background-repeat: no-repeat; /* Prevent repeating the background image */
-  background-position: center; /* Center the background image */
-  min-height: 100vh; /* Ensure the background covers the entire viewport height */
-  width: 100%; /* Ensure the background covers the entire width of the container */
-  overflow: hidden; /* Hide any overflow, if necessary */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Home Page Styling */
 .home-page {
   background-image: url('/images/HD-wallpaper-darkness-in-the-forest-creepy-forest-nature-dark.jpg');
-  background-size: cover; /* Ensure the background covers the entire container */
-  background-repeat: no-repeat; /* Prevent repeating the background image */
-  background-position: center; /* Center the background image */
-  min-height: 100vh; /* Ensure the background covers the entire viewport height */
-  width: 100%; /* Ensure the background covers the entire width of the container */
-  overflow: hidden; /* Hide any overflow, if necessary */
-  display: flex; /* Use Flexbox for centering */
-  flex-direction: column; /* Arrange items in a column */
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
-}
-/* Login/Signup Page Background */
-.login-signup-page {
-  background-image: url('/images/background4.jpg'); /* Adjust path and extension as needed */
-  background-size: cover; /* Cover the entire container */
-  background-repeat: no-repeat; /* Prevent repeating */
-  background-position: center; /* Center the image */
-  min-height: 100vh; /* Full viewport height */
-  width: 100%; /* Full width */
-  overflow: hidden; /* Hide overflow if needed */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-/* Auth Container */
-.auth-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7); /* Optional: Semi-transparent background for better readability */
+}
+
+/* Login/Signup Page Background */
+.login-page {
+  background-image: url('/images/background4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Auth Container */
+.auth-container {
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 600px; /* Optional: Limit the width */
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Header styling */
+.header {
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  color: #1f1e1e;
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #1d4ed8; /* Tailwind blue-600 */
+  color: rgb(26, 24, 24);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #2563eb; /* Tailwind blue-700 */
+}
+
+.toggle-button {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #1d4ed8; /* Tailwind blue-600 */
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
 }
 
 /* Header styling */
@@ -67,111 +112,12 @@ header {
   padding: 10px 20px; /* Adds space inside the header */
   box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
   border-bottom: 5px solid #666666; /* Adds a border at the bottom of the header */
-  background: #1a1a1a; /* Sets the background color of the header */
+  background: #1f1e1e; /* Sets the background color of the header to gray */
   display: flex; /* Uses Flexbox for layout */
   justify-content: space-between; /* Distributes space between child elements */
   align-items: center; /* Vertically centers child elements */
   position: relative; /* Allows for positioning of child elements if needed */
   min-height: 60px; /* Optional: Ensures the header has a minimum height */
-}
-
-/* Button styles */
-.no-button, .start-button, .play-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.no-button {
-  color: #ff6666;
-  font-size: 1em; /* Use em for better responsiveness */
-}
-
-.no-button:hover {
-  color: #ff99cc;
-  text-decoration: underline;
-}
-
-.play-button {
-  padding: 10px 20px;
-  color: #ff6666;
-  font-size: 2.5em; /* Adjusted for responsiveness */
-  font-family: 'Creepy-Regular', sans-serif;
-  text-align: center;
-  display: block;
-  margin: auto;
-  margin-top: 50px;
-}
-
-.start-button:hover {
-  background-color: #555555;
-  color: #ffffff;
-}
-
-.play-button img {
-  width: 100px;
-  height: auto;
-}
-
-/* Font face declarations */
-@font-face {
-  font-family: 'Creepy-Regular';
-  src: url('/fonts/Creepster-Regular.ttf') format('truetype');
-}
-.creepster {
-  font-family: 'Creepy-Regular', cursive; /* Ensure the font is applied */
-  font-size: 10rem; /* Adjust the size as needed */
-  color: #fff; /* Adjust the color as needed */
-  text-align: center; /* Center-aligns the text inside this container */
-}
-
-
-
-/* Story section styles */
-.story-container {
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 20px;
-  color: whitesmoke;
-  font-family: 'cursive', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-/* Story text paragraph styling */
-.story-text p {
-  font-size: 1.125em; /* Responsive font size */
-  line-height: 1.5;
-  text-align: justify;
-}
-
-/* Choice buttons container styling */
-.choice-buttons-container {
-  display: flex; /* Enable flexbox */
-  flex-direction: row; /* Arrange buttons in a row */
-  gap: 20px; /* Reduced spacing for smaller screens */
-  margin-top: 20px; /* Space above the choices */
-  justify-content: center; /* Center buttons horizontally */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-/* Choice button styling */
-.choice-button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1em; /* Responsive font size */
-}
-
-.choice-button:hover {
-  background-color: #555;
 }
 
 /* Navigation links container styling */
@@ -185,7 +131,7 @@ header {
   display: flex;
   gap: 10px; /* Reduced gap for smaller screens */
   text-decoration: none;
-  color: #ffffff;
+  color: #ffffff; /* White text color for contrast against gray background */
   font-size: 1em; /* Responsive font size */
 }
 
@@ -194,100 +140,46 @@ header {
   text-decoration: underline;
 }
 
-/* Animation styles */
-.fade-in-title {
-  animation: fadeIn 20s;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.one-word-by-one {
-  color: #ff99cc;
-  font-family: "Courier";
-  font-size: 1.25em; /* Responsive font size */
-  margin: 10px 0 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end);
-}
-
-@keyframes type {
-  from { width: 0; }
-}
-
-/* Button container for spacing */
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5em; /* Responsive font size */
-  gap: 20px; /* Reduced gap for smaller screens */
-  padding: 15px 20px;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-/* Button styling */
-#back-button, #next-button {
+/* Logout button styling */
+.no-button {
+  color: #ffffff; /* White text color */
   font-size: 1em; /* Responsive font size */
-  padding: 10px 20px;
 }
 
-#back-button {
-  order: 1;
+.no-button:hover {
+  color: #ff9999; /* Light pink color on hover */
+  text-decoration: underline;
 }
 
-#next-button {
-  order: 2;
+/* Font face declarations */
+@font-face {
+  font-family: 'Creepy-Regular';
+  src: url('/fonts/Creepster-Regular.ttf') format('truetype');
 }
 
-/* Input styling */
-.transparent-input { 
-  background: none; 
-  border: none;
-} 
-
-input { 
-  width: 100%; /* Full width on smaller screens */
-  /* max-width: 300px; Limit the width */
-  height: 40px; 
-  font-size: 1.5em; /* Responsive font size */
-  color: #151313;
-}
-
-/* Home button styling */
-#return-home-button {
-  transform: scale(1.5); /* Adjust scaling for responsiveness */
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-}
-
-/* Title container styling */
-.title-container {
-  background: url('/images/title-background.jpg'); 
-  background-repeat: no-repeat;
-  padding: 20px; /* Reduced padding for smaller screens */
+.creepster {
+  font-family: 'Creepy-Regular', cursive; /* Ensure the font is applied */
+  font-size: 12rem; /* Increased font size for larger text */
+  color: #fff; /* Adjust the color as needed */
   text-align: center; /* Center-aligns the text inside this container */
-  margin-top: 20px; /* Optional: Adds some spacing above the title */
 }
 
-/* Container for forms side by side */
-.forms-container {
-  display: flex; /* Use flexbox for horizontal alignment */
-  flex-direction: column; /* Stack forms vertically on smaller screens */
-  gap: 20px; /* Adds some space between the forms */
-  max-width: 1200px; /* Optional: Limits the width of the forms container */
-  width: 100%; /* Ensure it fits within the container */
+.play-button {
+  padding: 30px 60px; /* Increased padding for a larger button */
+  font-size: 3rem; /* Adjusted font size for larger text */
+  color: #ff6666; /* Button text color */
+  font-family: 'Creepy-Regular', sans-serif; /* Ensure the Creepy font is applied */
+  text-align: center; /* Center the text inside the button */
+  display: block; /* Block display to occupy full width available */
+  margin: auto; /* Center the button horizontally */
+  margin-top: 50px; /* Space above the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Shadow effect for depth */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
 }
 
-/* Common form styling */
-.form {
-  background: #333; /* Background color for form */
-  padding: 20px;
-  border-radius: 8px; /* Rounded corners for forms */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+.start-button:hover {
+  background-color: #555555; /* Darker background on hover */
+  color: #ffffff; /* White text color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover for subtle lift effect */
+  transform: translateY(-2px); /* Slightly lift the button */
 }
