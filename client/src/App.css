@@ -1,4 +1,11 @@
 /* General body styling */
+body {
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px; /* Adjusted for readability */
+  margin: 0;
+  padding: 0;
+}
 
 /* Game Page Background */
 .game-page {
@@ -11,7 +18,8 @@
   overflow: hidden; /* Hide any overflow, if necessary */
 }
 
-.home-page{
+/* Home Page Styling */
+.home-page {
   background-image: url('/images/HD-wallpaper-darkness-in-the-forest-creepy-forest-nature-dark.jpg');
   background-size: cover; /* Ensure the background covers the entire container */
   background-repeat: no-repeat; /* Prevent repeating the background image */
@@ -19,10 +27,12 @@
   min-height: 100vh; /* Ensure the background covers the entire viewport height */
   width: 100%; /* Ensure the background covers the entire width of the container */
   overflow: hidden; /* Hide any overflow, if necessary */
+  display: flex; /* Use Flexbox for centering */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
 }
-
-
-/* Ensure correct path and file extension */
+/* Login/Signup Page Background */
 .login-signup-page {
   background-image: url('/images/background4.jpg'); /* Adjust path and extension as needed */
   background-size: cover; /* Cover the entire container */
@@ -31,11 +41,12 @@
   min-height: 100vh; /* Full viewport height */
   width: 100%; /* Full width */
   overflow: hidden; /* Hide overflow if needed */
-  justify-content: center;
-
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
-/* Additional CSS for auth container */
+/* Auth Container */
 .auth-container {
   display: flex;
   flex-direction: column;
@@ -47,14 +58,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 600px; /* Optional: Limit the width */
-}
-
-
-
-body {
-  color: #ffffff;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 50x
 }
 
 /* Header styling */
@@ -71,7 +74,6 @@ header {
   min-height: 60px; /* Optional: Ensures the header has a minimum height */
 }
 
-
 /* Button styles */
 .no-button, .start-button, .play-button {
   background: none;
@@ -81,7 +83,7 @@ header {
 
 .no-button {
   color: #ff6666;
-  font-size: 100%;
+  font-size: 1em; /* Use em for better responsiveness */
 }
 
 .no-button:hover {
@@ -92,13 +94,12 @@ header {
 .play-button {
   padding: 10px 20px;
   color: #ff6666;
-  font-size: 40px;
+  font-size: 2.5em; /* Adjusted for responsiveness */
   font-family: 'Creepy-Regular', sans-serif;
   text-align: center;
   display: block;
   margin: auto;
   margin-top: 50px;
-  
 }
 
 .start-button:hover {
@@ -111,12 +112,19 @@ header {
   height: auto;
 }
 
-
 /* Font face declarations */
 @font-face {
   font-family: 'Creepy-Regular';
   src: url('/fonts/Creepster-Regular.ttf') format('truetype');
 }
+.creepster {
+  font-family: 'Creepy-Regular', cursive; /* Ensure the font is applied */
+  font-size: 10rem; /* Adjust the size as needed */
+  color: #fff; /* Adjust the color as needed */
+  text-align: center; /* Center-aligns the text inside this container */
+}
+
+
 
 /* Story section styles */
 .story-container {
@@ -133,28 +141,22 @@ header {
   text-align: center;
 }
 
+/* Story text paragraph styling */
 .story-text p {
-  font-size: 18px;
+  font-size: 1.125em; /* Responsive font size */
   line-height: 1.5;
   text-align: justify;
-}
-.two-choices{
-  display: flex; /* Enable flexbox */
-  flex-direction: row; /* Arrange buttons in a row */
-  gap: 200px; /* Spacing between choice buttons */
-  margin-top: 20px; /* Space above the choices */
-  justify-content: center; /* Center buttons horizontally */
 }
 
 /* Choice buttons container styling */
 .choice-buttons-container {
   display: flex; /* Enable flexbox */
   flex-direction: row; /* Arrange buttons in a row */
-  gap: 200px; /* Spacing between choice buttons */
+  gap: 20px; /* Reduced spacing for smaller screens */
   margin-top: 20px; /* Space above the choices */
   justify-content: center; /* Center buttons horizontally */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
-
 
 /* Choice button styling */
 .choice-button {
@@ -164,35 +166,32 @@ header {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
-  gap: 200px; 
+  font-size: 1em; /* Responsive font size */
 }
 
 .choice-button:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
+/* Navigation links container styling */
 .nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .nav-links {
-  display:flex;
-  gap: 20px; 
+  display: flex;
+  gap: 10px; /* Reduced gap for smaller screens */
   text-decoration: none;
-  color: #ffffff; 
-  font-size: 16px; 
+  color: #ffffff;
+  font-size: 1em; /* Responsive font size */
 }
 
 /* Optional: Add styles for hover effects if desired */
 .nav-link:hover {
   text-decoration: underline;
 }
-
-
 
 /* Animation styles */
 .fade-in-title {
@@ -207,7 +206,7 @@ header {
 .one-word-by-one {
   color: #ff99cc;
   font-family: "Courier";
-  font-size: 20px;
+  font-size: 1.25em; /* Responsive font size */
   margin: 10px 0 0 10px;
   white-space: nowrap;
   overflow: hidden;
@@ -223,13 +222,15 @@ header {
 .button-container {
   display: flex;
   justify-content: space-between;
-  font-size: 25px;
-  gap: 100px;
+  font-size: 1.5em; /* Responsive font size */
+  gap: 20px; /* Reduced gap for smaller screens */
   padding: 15px 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
+/* Button styling */
 #back-button, #next-button {
-  font-size: 20px;
+  font-size: 1em; /* Responsive font size */
   padding: 10px 20px;
 }
 
@@ -248,15 +249,16 @@ header {
 } 
 
 input { 
-  width: 300px; 
+  width: 100%; /* Full width on smaller screens */
+  max-width: 300px; /* Limit the width */
   height: 40px; 
-  font-size: 24px; 
+  font-size: 1.5em; /* Responsive font size */
   color: #151313;
 }
 
 /* Home button styling */
 #return-home-button {
-  transform: scale(4);
+  transform: scale(1.5); /* Adjust scaling for responsiveness */
   margin: 0;
   position: absolute;
   top: 80%;
@@ -267,65 +269,24 @@ input {
 .title-container {
   background: url('/images/title-background.jpg'); 
   background-repeat: no-repeat;
-  padding: 50px; 
+  padding: 20px; /* Reduced padding for smaller screens */
   text-align: center; /* Center-aligns the text inside this container */
   margin-top: 20px; /* Optional: Adds some spacing above the title */
 }
 
-
-
 /* Container for forms side by side */
 .forms-container {
   display: flex; /* Use flexbox for horizontal alignment */
-  justify-content: space-between; /* Space between the forms */
-  gap: 20px; /* Optional: Adds some space between the forms */
+  flex-direction: column; /* Stack forms vertically on smaller screens */
+  gap: 20px; /* Adds some space between the forms */
   max-width: 1200px; /* Optional: Limits the width of the forms container */
   width: 100%; /* Ensure it fits within the container */
 }
 
 /* Common form styling */
 .form {
-  flex: 1; /* Ensures forms take up equal space */
-  max-width: 500px; /* Limits width of each form */
   background: #333; /* Background color for form */
   padding: 20px;
   border-radius: 8px; /* Rounded corners for forms */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
 }
-
-/* Styling for form input fields and buttons */
-.form-input {
-  width: 100%; /* Full width for input fields */
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.btn {
-  background-color: #007bff; /* Button color */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn:hover {
-  background-color: #0056b3; /* Darker color on hover */
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-
-  .creepster {
-    font-family: 'Creepster', cursive; /* Ensure the font is applied */
-    font-size: 10rem; /* Adjust the size as needed */
-    color: #fff; /* Adjust the color as needed */
-    text-align: center; /* Center-aligns the text inside this container */
-
-  }
-
