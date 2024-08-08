@@ -10,7 +10,6 @@ body {
 /* Game Page Background */
 .game-page {
   background-color: black;
-  /* background-image: url('/images/background1.jpg'); Ensure the file path is correct */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -60,64 +59,16 @@ body {
 }
 
 /* Header styling */
-.header {
-  margin-bottom: 20px;
-}
-
-/* Form styling */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input {
-  color: #0e0d0d;
-  width: 100%;
-  height: 40px;
-  font-size: 1em;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.submit-button {
-  background-color: #1d4ed8; /* Tailwind blue-600 */
-  color: rgb(26, 24, 24);
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #2563eb; /* Tailwind blue-700 */
-}
-
-.toggle-button {
-  margin-top: 10px;
-  background: none;
-  border: none;
-  color: #1d4ed8; /* Tailwind blue-600 */
-  cursor: pointer;
-}
-
-.toggle-button:hover {
-  text-decoration: underline;
-}
-
-/* Header styling */
 header {
-  width: 100%; /* Ensures the header spans the full width of the viewport */
-  padding: 10px 20px; /* Adds space inside the header */
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-  border-bottom: 5px solid #666666; /* Adds a border at the bottom of the header */
-  background: #1f1e1e; /* Sets the background color of the header to gray */
-  display: flex; /* Uses Flexbox for layout */
-  justify-content: space-between; /* Distributes space between child elements */
-  align-items: center; /* Vertically centers child elements */
-  position: relative; /* Allows for positioning of child elements if needed */
-  min-height: 60px; /* Optional: Ensures the header has a minimum height */
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-bottom: 5px solid #666666;
+  background: #1f1e1e; /* Gray background for header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
 }
 
 /* Navigation links container styling */
@@ -129,25 +80,60 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 10px; /* Reduced gap for smaller screens */
+  gap: 10px;
   text-decoration: none;
-  color: #ffffff; /* White text color for contrast against gray background */
-  font-size: 1em; /* Responsive font size */
+  color: #ffffff; /* White text color for navigation links */
+  font-size: 1em;
 }
 
-/* Optional: Add styles for hover effects if desired */
 .nav-link:hover {
   text-decoration: underline;
 }
 
-/* Logout button styling */
-.no-button {
-  color: #ffffff; /* White text color */
-  font-size: 1em; /* Responsive font size */
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.no-button:hover {
-  color: #ff9999; /* Light pink color on hover */
+input {
+  color: #0e0d0d; /* Dark text color for input fields */
+  background-color: #ffffff; /* White background for input fields */
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #1d4ed8; /* Tailwind blue-600 */
+  color: #ffffff; /* White text color for button */
+  padding: 15px 30px; /* Increased padding for larger button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and hover effect */
+}
+
+.submit-button:hover {
+  background-color: #2563eb; /* Tailwind blue-700 */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.toggle-button {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #1d4ed8; /* Tailwind blue-600 */
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.toggle-button:hover {
   text-decoration: underline;
 }
 
@@ -158,28 +144,30 @@ header {
 }
 
 .creepster {
-  font-family: 'Creepy-Regular', cursive; /* Ensure the font is applied */
-  font-size: 12rem; /* Increased font size for larger text */
-  color: #fff; /* Adjust the color as needed */
-  text-align: center; /* Center-aligns the text inside this container */
+  font-family: 'Creepy-Regular', cursive;
+  font-size: 12rem; /* Large font size for prominent text */
+  color: #ffffff; /* White text color */
+  text-align: center;
 }
 
 .play-button {
-  padding: 30px 60px; /* Increased padding for a larger button */
-  font-size: 3rem; /* Adjusted font size for larger text */
+  padding: 30px 60px; /* Large button padding */
+  font-size: 3rem; /* Larger font size */
   color: #ff6666; /* Button text color */
-  font-family: 'Creepy-Regular', sans-serif; /* Ensure the Creepy font is applied */
-  text-align: center; /* Center the text inside the button */
-  display: block; /* Block display to occupy full width available */
-  margin: auto; /* Center the button horizontally */
-  margin-top: 50px; /* Space above the button */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Shadow effect for depth */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  font-family: 'Creepy-Regular', sans-serif;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
 }
 
-.start-button:hover {
-  background-color: #555555; /* Darker background on hover */
+.play-button:hover {
+  
   color: #ffffff; /* White text color on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover for subtle lift effect */
-  transform: translateY(-2px); /* Slightly lift the button */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
 }
