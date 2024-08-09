@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import auth from "../utils/auth";
-import "../App.css"; // Ensure the CSS is imported
+import "../App.css";
 
 const Login = () => {
   const [loginName, setLoginName] = useState("");
@@ -22,7 +22,7 @@ const Login = () => {
       });
       const token = response.data.login.token;
       auth.login(token);
-      navigate('/'); // Redirect after successful login
+      navigate('/'); 
     } catch (error) {
       console.error("Login error:", error);
     }
