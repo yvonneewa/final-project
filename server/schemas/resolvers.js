@@ -12,12 +12,26 @@ const resolvers = {
           _id: context.user._id,
         }).populate("current_story");
         if (!foundUser) {
-          // return res.status(400).json({ message: 'Cannot find a user with this id!' });
           throw AuthenticationError;
         }
-
-        // res.json(foundUser);
         return foundUser;
+      }
+    },
+    story: async (_, {storyId}) =>{
+      try {
+        const story = await Story.findOne({ story_id: storyId }).populate();
+        return story;
+      } catch (error) {
+        console.error('Error fetching story:', error);
+        return null;
+      }
+    },
+    stories: async () => {
+      try {
+        return await Story.find(); // Fetch all stories
+      } catch (error) {
+        console.error("Error fetching stories:", error);
+        return null;
       }
     },
   },

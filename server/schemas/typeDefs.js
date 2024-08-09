@@ -28,6 +28,9 @@ const typeDefs = `
 
   type Query {
     me: User
+    currentStory(storyId: ID!): Story
+    story(storyId: ID!): Story
+    stories: [Story]
   }
 
   type Mutation {
