@@ -1,37 +1,30 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from "react-router-dom";
 import StorySection from "../components/StorySection.jsx";
 import { GO_NEXT_STORY } from "../utils/mutations.js";
-import {GET_CURRENT_STORY}from "../utils/queries.js";
+import { GET_ME } from "../utils/queries.js";
 import { useMutation, useQuery } from "@apollo/client";
 
 function Game() {
-  const navigate = useNavigate();
   const [storyData, setStoryData] = useState({});
-  const { loading: storyLoading, error, data } = useQuery(GET_CURRENT_STORY, {
+  const [goNextStory, { loading: mutationLoading }] =
+    useMutation(GO_NEXT_STORY, {
+      refetchQueries: GET_ME
+    });
+
+  const { loading } = useQuery(GET_ME, {
     variables: { storyId: storyData.story_id || 1 },
-    onCompleted: (data) => {
-      if (data.me.current_story.is_dead) {
-        navigate('/dead');
-      } else {
-        setStoryData(data.me.current_story);
-      }
+    onCompleted: async (data) => {
+      const response = await goNextStory({
+        variables: {
+          nextStoryId: data.me.current_story,
+        },
+      });
+      setStoryData(response.data.goNextStory);
     },
   });
-  const [goNextStory, { loading: mutationLoading  }] = useMutation(GO_NEXT_STORY);
-  useEffect( () => {
-    async function  fetchNextStory() {
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: 1,
-      },
-    });
-    const fetchedStory = response.data.goNextStory;
-    setStoryData(fetchedStory);
-}
-fetchNextStory();
-  }, [goNextStory, navigate]);
-  if (storyLoading || mutationLoading) {
+
+  if (loading || mutationLoading) {
     return (
       <>
         <h1>Please wait. Still loading...</h1>
@@ -60,7 +53,7 @@ fetchNextStory();
 
   return (
     <>
-     <div className="game-page">
+      <div className="game-page">
         <div className="story-container">
           <div className="choice-buttons-container">
             {/* <h1>This is the game page!</h1> */}
@@ -69,15 +62,39 @@ fetchNextStory();
               initialIsDead={false}
               initialEscaped={false}
               choices={storyData?.choices}
-              onChoiceSelect={() => {}}
+              onChoiceSelect={async (nextStoryId) => {
+                console.log(nextStoryId);
+                const response = await goNextStory({
+                  variables: {
+                    nextStoryId: nextStoryId,
+                  },
+                });
+
+                setStoryData(response.data.goNextStory);
+              }}
             />
 
-            {storyData?.choices?.length == 0 ? (
-              <button onClick={clickNext}>Next</button>
-            ) : null}
-            {storyData?.choices?.length == 0  && !storyData?.disable_go_back ?(
-              <button onClick={clickBack}>Back</button>
-            ) : null}
+            {storyData.is_dead ? (
+              <>
+                <button
+                  onClick={() => {
+                    window.location.href = "/gameover";
+                  }}
+                >
+                  Next
+                </button>
+              </>
+            ) : (
+              <>
+                {storyData?.choices?.length == 0 ? (
+                  <button onClick={clickNext}>Next</button>
+                ) : null}
+                {storyData?.choices?.length == 0 &&
+                !storyData?.disable_go_back ? (
+                  <button onClick={clickBack}>Back</button>
+                ) : null}
+              </>
+            )}
           </div>
         </div>
       </div>

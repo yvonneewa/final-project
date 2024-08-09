@@ -18,7 +18,7 @@ const typeDefs = `
   type User {
     username: String
     email: String
-    current_story: Story
+    current_story: Int
   }
 
   type Auth {

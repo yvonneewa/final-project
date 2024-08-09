@@ -8,7 +8,7 @@ const Choices = ({ choices, onChoiceSelect }) => {
         <button
           key={choice.id}
           className="choice-button"
-          onClick={() => onChoiceSelect(choice.action)}
+          onClick={() => onChoiceSelect(choice.next_story_id)}
         >
           {choice.text}
         </button>

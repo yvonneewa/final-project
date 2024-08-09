@@ -20,9 +20,13 @@ const userSchema = new Schema({
     minlength: 5,
   },
   current_story: {
-    type: Schema.Types.ObjectId,
-    ref: "Story", // story model name
+      type: Number,
+      default: 1
   },
+  // current_story: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Story", // story model name
+  // },
   // thoughts: [
   //   {
   //     type: Schema.Types.ObjectId,

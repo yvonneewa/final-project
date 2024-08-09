@@ -16,12 +16,6 @@ const StorySection = ({
     disable_go_back: false,
     choices: choices || [],
   });
-
-  const handleChoiceSelect = (choice) => {
-    onChoiceSelect(choice);
-
-  };
-
   
   return (
     <div className="story-container">
@@ -47,7 +41,7 @@ const StorySection = ({
           )} */}
           <Choices
             choices={story.choices}
-            onChoiceSelect={handleChoiceSelect}
+            onChoiceSelect={onChoiceSelect}
           />
         </div>
       )}
