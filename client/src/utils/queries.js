@@ -32,18 +32,15 @@ import { gql } from '@apollo/client';
 //   }
 // `;
 export const GET_CURRENT_STORY = gql`
-query Query {
-  me {
-    current_story {
-      story_id
-      is_dead
-      story
-      has_choice
-      disable_go_back
-      choices {
-        text
-        next_story_id
-      }
+query Story($storyId: ID!) {
+  story(storyId: $storyId) {
+    story
+    is_dead
+    has_choice
+    disable_go_back
+    choices {
+      text
+      next_story_id
     }
   }
 }`;

@@ -1,32 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom'; 
 import StorySection from "../components/StorySection.jsx";
 import { GO_NEXT_STORY } from "../utils/mutations.js";
-import { useMutation } from "@apollo/client";
-
-import { useState } from "react";
+import {GET_CURRENT_STORY}from "../utils/queries.js";
+import { useMutation, useQuery } from "@apollo/client";
 
 function Game() {
+  const navigate = useNavigate();
   const [storyData, setStoryData] = useState({});
-  const [goNextStory, { loading }] = useMutation(GO_NEXT_STORY);
-
-  useEffect(async () => {
+  const { loading: storyLoading, error, data } = useQuery(GET_CURRENT_STORY, {
+    variables: { storyId: storyData.story_id || 1 },
+    onCompleted: (data) => {
+      if (data.me.current_story.is_dead) {
+        navigate('/dead');
+      } else {
+        setStoryData(data.me.current_story);
+      }
+    },
+  });
+  const [goNextStory, { loading: mutationLoading  }] = useMutation(GO_NEXT_STORY);
+  useEffect( () => {
+    async function  fetchNextStory() {
     const response = await goNextStory({
       variables: {
         nextStoryId: 1,
       },
     });
-
-    setStoryData(response.data.goNextStory);
-  }, []);
-
-  if (loading) {
+    const fetchedStory = response.data.goNextStory;
+    setStoryData(fetchedStory);
+}
+fetchNextStory();
+  }, [goNextStory, navigate]);
+  if (storyLoading || mutationLoading) {
     return (
       <>
         <h1>Please wait. Still loading...</h1>
       </>
     );
   }
-
   async function clickNext() {
     const response = await goNextStory({
       variables: {
@@ -46,9 +57,10 @@ function Game() {
 
     setStoryData(response.data.goNextStory);
   }
+
   return (
     <>
-      <div className="game-page">
+     <div className="game-page">
         <div className="story-container">
           <div className="choice-buttons-container">
             {/* <h1>This is the game page!</h1> */}
