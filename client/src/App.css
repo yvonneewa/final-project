@@ -9,7 +9,7 @@ body {
 
 /* Game Page Background */
 .game-page {
-  background-color: black;
+   background-image: url('/images/background5.png');
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
