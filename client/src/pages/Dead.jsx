@@ -3,7 +3,7 @@ import React from "react";
 const Dead = () => {
   const handleStartClick = (e) => {
     e.preventDefault();
-    window.location.href = "/home";
+    window.location.href = "/";
   };
 
   return (

@@ -31,19 +31,28 @@ import { gql } from '@apollo/client';
 //     }
 //   }
 // `;
-export const GET_CURRENT_STORY = gql`
-query Query {
+export const GET_ME = gql`
+query me {
   me {
-    current_story {
-      story_id
-      is_dead
-      story
-      has_choice
-      disable_go_back
-      choices {
-        text
-        next_story_id
-      }
+    username
+    current_story
+    email
+  }
+}
+`
+
+
+export const GET_CURRENT_STORY = gql`
+query currentStory($storyId: ID!) {
+  currentStory(storyId: $storyId) {
+    story_id
+    story
+    is_dead
+    has_choice
+    disable_go_back
+    choices {
+      text
+      next_story_id
     }
   }
 }`;

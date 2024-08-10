@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LOGIN_USER } from "../utils/mutations";
+import { LOGIN_USER, CREATE_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import auth from "../utils/auth";
 import "../App.css";
@@ -9,9 +9,11 @@ const Login = () => {
   const [loginName, setLoginName] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [signupName, setSignupName] = useState("");
+  const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const [currentPage, setCurrentPage] = useState("login");
   const [loginUser] = useMutation(LOGIN_USER);
+  const [signupUser] = useMutation(CREATE_USER);
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
@@ -32,6 +34,16 @@ const Login = () => {
     e.preventDefault();
     console.log("Signup Name:", signupName);
     console.log("Signup Password:", signupPassword);
+    try {
+      const response = await signupUser({
+        variables: { username: signupName, email: signupEmail, password: signupPassword },
+      });
+      const token = response.data.signup.token;
+      auth.login(token);
+      navigate('/'); 
+    } catch (error) {
+      console.error("Login error:", error);
+    }
   };
 
   return (
@@ -82,6 +94,14 @@ const Login = () => {
               name="username"
               value={signupName}
               onChange={(e) => setSignupName(e.target.value)}
+              required
+            />
+            <label className="text-sm font-medium">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={signupEmail}
+              onChange={(e) => setSignupEmail(e.target.value)}
               required
             />
             <label className="text-sm font-medium">Password</label>

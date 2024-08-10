@@ -25,24 +25,43 @@ export const LOGIN_USER = gql`
 `;
 
 // Define your mutations
+// export const CREATE_USER = gql`
+//   mutation signup($username: String!, $email: String!, $password: String!) {
+//   signup(username: $username, email: $email, password: $password) {
+//     token
+//     user {
+//       username
+//       email
+//       current_story {
+//         story_id
+//       }
+//     }
+//   }
+// }
+// `;
+
 export const CREATE_USER = gql`
-  mutation CreateUser($email: String!, $password: String!) {
-    createUser(email: $email, password: $password) {
-      id
+  mutation signup($username: String!, $email: String!, $password: String!) {
+  signup(username: $username, email: $email, password: $password) {
+    token
+    user {
+      username
       email
+      current_story
     }
   }
+}
 `;
 
-export const UPDATE_USER_PROFILE = gql`
-  mutation UpdateUserProfile($id: ID!, $name: String!, $bio: String!) {
-    updateUserProfile(id: $id, name: $name, bio: $bio) {
-      id
-      name
-      bio
-    }
-  }
-`;
+// export const UPDATE_USER_PROFILE = gql`
+//   mutation UpdateUserProfile($id: ID!, $name: String!, $bio: String!) {
+//     updateUserProfile(id: $id, name: $name, bio: $bio) {
+//       id
+//       name
+//       bio
+//     }
+//   }
+// `;
 
 export const DELETE_USER = gql`
   mutation DeleteUser($id: ID!) {

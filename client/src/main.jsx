@@ -5,10 +5,10 @@ import App from "./App.jsx";
 import Home from "./pages/Home";
 // import Profile from "./pages/Profile";
 import Game from "./pages/Game";
-import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 import auth from "./utils/auth.js";
+import Dead from "./pages/Dead.jsx";
 
 
 
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Login />,
+      },
+      {
+        path: "/gameover",
+        element: <Dead />,
       },
       {
         path: "/game",

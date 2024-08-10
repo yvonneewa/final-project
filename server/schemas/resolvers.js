@@ -10,7 +10,7 @@ const resolvers = {
       } else {
         const foundUser = await User.findOne({
           _id: context.user._id,
-        }).populate("current_story");
+        })
         if (!foundUser) {
           throw AuthenticationError;
         }
@@ -19,7 +19,7 @@ const resolvers = {
     },
     story: async (_, {storyId}) =>{
       try {
-        const story = await Story.findOne({ story_id: storyId }).populate();
+        const story = await Story.findOne({ story_id: storyId });
         return story;
       } catch (error) {
         console.error('Error fetching story:', error);
@@ -53,7 +53,7 @@ const resolvers = {
         // update user to next story id
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { current_story: foundStory._id }
+          { current_story: foundStory.story_id }
         );
 
         return {
