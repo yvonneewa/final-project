@@ -42,15 +42,16 @@ Enjoy the game!
 
 ## Concept
 
-![Concept](images/concept.png)
+![alt text](image-2.png)
 
 ## Homepage
 
-![Homepage](images/homepage.png)
-
+![alt text](image-1.png)
 ## Game
 
-![Game](images/game.png)
+![alt text](image.png)
+
+
 
 ## Credits
 
@@ -66,6 +67,6 @@ Enjoy the game!
   - [Spooky Forest Wallpapers](https://wallpapercave.com/spooky-forest-wallpapers)
 
 ## License
-MIT 
----
+MIT license
+
 
