@@ -42,15 +42,16 @@ Enjoy the game!
 
 ## Concept
 
-![Concept](images/concept.png)
+![alt text](client/public/images/CONCEPT.png)
 
 ## Homepage
 
-![Homepage](images/homepage.png)
-
+![alt text](image-1.png)
 ## Game
 
-![Game](images/game.png)
+![alt text](image.png)
+
+
 
 ## Credits
 
@@ -67,5 +68,5 @@ Enjoy the game!
 
 ## License
 MIT 
----
+
 
