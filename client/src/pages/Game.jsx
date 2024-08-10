@@ -62,11 +62,25 @@ function Game() {
 
     setStoryData(response.data.goNextStory);
   }
+  async function handleGoToGameOver() {
+    // Call goNextStory with nextStoryId set to 1
+    const response = await goNextStory({
+      variables: {
+        nextStoryId: 1,
+      },
+    });
+    setStoryData(response.data.goNextStory);
+    setStoryId(1); // Set storyId to 1
+
+    // Redirect to /gameover after updating story data
+    window.location.href = "/gameover";
+  }
 
   return (
     <>
       <div className="game-page">
         <div className="story-container">
+          
           <div className="choice-buttons-container">
             {/* <h1>This is the game page!</h1> */}
             <StorySection
@@ -74,14 +88,14 @@ function Game() {
               initialIsDead={false}
               initialEscaped={false}
               choices={storyData?.choices}
+              
               onChoiceSelect={async (nextStoryId) => {
-                console.log(nextStoryId);
+                console.log("meow");
                 const response = await goNextStory({
                   variables: {
                     nextStoryId: nextStoryId,
                   },
                 });
-
                 setStoryData(response.data.goNextStory);
               }}
             />
@@ -89,9 +103,7 @@ function Game() {
             {storyData.is_dead ? (
               <>
                 <button
-                  onClick={() => {
-                    window.location.href = "/gameover";
-                  }}
+                onClick={ handleGoToGameOver}
                 >
                   Next
                 </button>

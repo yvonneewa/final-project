@@ -47,7 +47,9 @@ const Intro = ({ stories }) => {
       {/* Second Section */}
       {currentSection === 'second' && (
         <div id="second-section">
+          console.log(stories[1].story);
           <h1 id="name-section">{stories[1].story}</h1>
+          <h2>{stories[1].story}</h2>
           <div className="button-container">
             <button id="next-button1" onClick={handleNextButtonClick}>Next</button>
           </div>
