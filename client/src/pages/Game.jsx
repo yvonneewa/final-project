@@ -7,69 +7,87 @@ import { useState } from "react";
 
 function Game() {
   const [storyData, setStoryData] = useState({});
-  const [goNextStory, { loading }] = useMutation(GO_NEXT_STORY);
+  const [goNextStory, { loading, error }] = useMutation(GO_NEXT_STORY);
 
-  useEffect(async () => {
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: 1,
-      },
-    });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await goNextStory({
+          variables: {
+            nextStoryId: 1,
+          },
+        });
+        setStoryData(response.data.goNextStory);
+      } catch (err) {
+        console.error("Error fetching story data:", err);
+      }
+    };
 
-    setStoryData(response.data.goNextStory);
-  }, []);
+    fetchData();
+  }, [goNextStory]); // Dependency array to run the effect when the goNextStory function changes
 
   if (loading) {
-    return (
-      <>
-        <h1>Please wait. Still loading...</h1>
-      </>
-    );
+    return <h1>Please wait. Still loading...</h1>;
   }
 
-  async function clickNext() {
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: parseInt(storyData.story_id) + 1,
-      },
-    });
-
-    setStoryData(response.data.goNextStory);
+  if (error) {
+    return <h1>Error loading story data. Please try again later.</h1>;
   }
 
-  async function clickBack() {
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: parseInt(storyData.story_id) - 1,
-      },
-    });
+  const clickNext = async () => {
+    try {
+      const response = await goNextStory({
+        variables: {
+          nextStoryId: parseInt(storyData.story_id) + 1,
+        },
+      });
+      setStoryData(response.data.goNextStory);
+    } catch (err) {
+      console.error("Error on clickNext:", err);
+    }
+  };
 
-    setStoryData(response.data.goNextStory);
-  }
+  const clickBack = async () => {
+    try {
+      const response = await goNextStory({
+        variables: {
+          nextStoryId: parseInt(storyData.story_id) - 1,
+        },
+      });
+      setStoryData(response.data.goNextStory);
+    } catch (err) {
+      console.error("Error on clickBack:", err);
+    }
+  };
+
   return (
-    <>
-      <div className="game-page">
-        <div className="story-container">
-          <div className="choice-buttons-container">
-            {/* <h1>This is the game page!</h1> */}
-            <StorySection
-              initialStory={storyData?.story}
-              initialIsDead={false}
-              initialEscaped={false}
-              choices={storyData?.choices}
-              onChoiceSelect={() => {}}
-            />
+    <div className="game-page">
+      <div className="story-container">
+        <div className="choice-buttons-container">
+          <StorySection
+            initialStory={storyData?.story}
+            initialIsDead={false}
+            initialEscaped={false}
+            choices={storyData?.choices}
+            onChoiceSelect={() => {}}
+          />
 
-            {storyData?.choices?.length == 0 ? (
-              <button onClick={clickNext}>Next</button>
-            ) : null}
-            {storyData?.choices?.length == 0  && !storyData?.disable_go_back ?(
-              <button onClick={clickBack}>Back</button>
-            ) : null}
+          <div className="button-container">
+            {storyData?.choices?.length === 0 && (
+              <button className="button next-button" onClick={clickNext}>
+                Next
+              </button>
+            )}
+            {storyData?.choices?.length === 0 &&
+              !storyData?.disable_go_back && (
+                <button className="button back-button" onClick={clickBack}>
+                  Back
+                </button>
+              )}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
