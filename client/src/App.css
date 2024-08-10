@@ -9,15 +9,51 @@ input {
   border-radius: 4px;
 }
 
+@font-face {
+  font-family: 'MyCustomFont1';
+  src: url('/fonts/NightmareStory-BWV8V.ttf') format('truetype');
+  /* You can add additional formats for better browser support */
+}
+
+/* Define a second font weight if you have one */
+@font-face {
+  font-family: 'MyCustomFont2';
+  src: url('/fonts/BodycounttypeprrsonaluseNews-Ea7Vg.otf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'MyCustomFont3';
+  src: url('/fonts/DeathridgeDemo-8MyvJ.otf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'MyCustomFont4';
+  src: url('fonts/NightmarePills-BV2w.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'MyCustomFont5';
+  src: url('/fonts/ButtongrinderfreepersonaluseDi-5yWn8.otf') format('truetype');
+  font-weight: bold;
+}
+body {
+  font-family: 'MyCustomFont4', sans-serif;
+}
+
+
 
 /* General body styling */
 
 body {
   color: #ffffff;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16px;
+  
+  font-size: 30px;
   margin: 0;
   padding: 0;
+
 }
 
 /* Game Page Background */
@@ -151,7 +187,7 @@ header {
 }
 
 .creepster {
-  font-family: 'Creepy-Regular', cursive;
+  font-family: 'MyCustomFont1', cursive;
   font-size: 12rem; 
   color: #ffffff; 
   text-align: center;
