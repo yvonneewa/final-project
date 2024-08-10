@@ -58,12 +58,14 @@ Enjoy the game!
 - Yvonne: [GitHub Profile](https://github.com/yvonneewa)
 
 ## References
-
+- tutor Joem
+- xpert learning
+- tailwind - css
 - Images:
   - [ArtStation](https://www.artstation.com/)
   - [Spooky Forest Wallpapers](https://wallpapercave.com/spooky-forest-wallpapers)
 
 ## License
-MIT License
+MIT 
 ---
 
