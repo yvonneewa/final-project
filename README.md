@@ -67,6 +67,6 @@ Enjoy the game!
   - [Spooky Forest Wallpapers](https://wallpapercave.com/spooky-forest-wallpapers)
 
 ## License
-MIT 
+MIT license
 
 
