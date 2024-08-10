@@ -24,7 +24,7 @@ function Game() {
     };
 
     fetchData();
-  }, [goNextStory]); // Dependency array to run the effect when the goNextStory function changes
+  }, [goNextStory]); 
 
   if (loading) {
     return <h1>Please wait. Still loading...</h1>;
