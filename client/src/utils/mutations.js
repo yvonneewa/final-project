@@ -25,6 +25,21 @@ export const LOGIN_USER = gql`
 `;
 
 // Define your mutations
+// export const CREATE_USER = gql`
+//   mutation signup($username: String!, $email: String!, $password: String!) {
+//   signup(username: $username, email: $email, password: $password) {
+//     token
+//     user {
+//       username
+//       email
+//       current_story {
+//         story_id
+//       }
+//     }
+//   }
+// }
+// `;
+
 export const CREATE_USER = gql`
   mutation signup($username: String!, $email: String!, $password: String!) {
   signup(username: $username, email: $email, password: $password) {
@@ -32,9 +47,7 @@ export const CREATE_USER = gql`
     user {
       username
       email
-      current_story {
-        story_id
-      }
+      current_story
     }
   }
 }

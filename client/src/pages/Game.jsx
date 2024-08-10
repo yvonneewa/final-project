@@ -7,22 +7,34 @@ import { useMutation, useQuery } from "@apollo/client";
 
 function Game() {
   const [storyData, setStoryData] = useState({});
+  const [storyId, setStoryId] = useState(1);// Initialize storyId with a default value
   const [goNextStory, { loading: mutationLoading }] =
     useMutation(GO_NEXT_STORY, {
       refetchQueries: GET_ME
     });
 
+  // const { loading } = useQuery(GET_ME, {
+  //   variables: { storyId: storyData.story_id || 1 },
+  //   onCompleted: async (data) => {
+  //     const response = await goNextStory({
+  //       variables: {
+  //         nextStoryId: data.me.current_story,
+  //       },
+  //     });
+  //     setStoryData(response.data.goNextStory);
+  //   },
+  // });
   const { loading } = useQuery(GET_ME, {
-    variables: { storyId: storyData.story_id || 1 },
     onCompleted: async (data) => {
       const response = await goNextStory({
         variables: {
-          nextStoryId: data.me.current_story,
+          nextStoryId: data.me.current_story, // Use current_story from the user data
         },
       });
       setStoryData(response.data.goNextStory);
+      setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
     },
-  });
+    });
 
   if (loading || mutationLoading) {
     return (
