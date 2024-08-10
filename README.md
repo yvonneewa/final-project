@@ -42,7 +42,7 @@ Enjoy the game!
 
 ## Concept
 
-![alt text](client/public/images/CONCEPT.png)
+![alt text](image-2.png)
 
 ## Homepage
 
