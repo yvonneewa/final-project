@@ -42,15 +42,16 @@ Enjoy the game!
 
 ## Concept
 
-![Concept](images/concept.png)
+![alt text](image-2.png)
 
 ## Homepage
 
-![Homepage](images/homepage.png)
-
+![alt text](image-1.png)
 ## Game
 
-![Game](images/game.png)
+![alt text](image.png)
+
+
 
 ## Credits
 
@@ -58,12 +59,14 @@ Enjoy the game!
 - Yvonne: [GitHub Profile](https://github.com/yvonneewa)
 
 ## References
-
+- tutor Joem
+- xpert learning
+- tailwind - css
 - Images:
   - [ArtStation](https://www.artstation.com/)
   - [Spooky Forest Wallpapers](https://wallpapercave.com/spooky-forest-wallpapers)
 
 ## License
-MIT License
----
+MIT license
+
 
