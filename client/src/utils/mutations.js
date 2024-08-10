@@ -53,15 +53,15 @@ export const CREATE_USER = gql`
 }
 `;
 
-export const UPDATE_USER_PROFILE = gql`
-  mutation UpdateUserProfile($id: ID!, $name: String!, $bio: String!) {
-    updateUserProfile(id: $id, name: $name, bio: $bio) {
-      id
-      name
-      bio
-    }
-  }
-`;
+// export const UPDATE_USER_PROFILE = gql`
+//   mutation UpdateUserProfile($id: ID!, $name: String!, $bio: String!) {
+//     updateUserProfile(id: $id, name: $name, bio: $bio) {
+//       id
+//       name
+//       bio
+//     }
+//   }
+// `;
 
 export const DELETE_USER = gql`
   mutation DeleteUser($id: ID!) {

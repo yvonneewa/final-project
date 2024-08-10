@@ -90,7 +90,6 @@ function Game() {
               choices={storyData?.choices}
               
               onChoiceSelect={async (nextStoryId) => {
-                console.log("meow");
                 const response = await goNextStory({
                   variables: {
                     nextStoryId: nextStoryId,
@@ -103,7 +102,7 @@ function Game() {
             {storyData.is_dead ? (
               <>
                 <button
-                onClick={ handleGoToGameOver}
+                onClick={handleGoToGameOver}
                 >
                   Next
                 </button>
