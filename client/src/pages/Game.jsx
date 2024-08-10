@@ -72,12 +72,19 @@ function Game() {
             onChoiceSelect={() => {}}
           />
 
-          {storyData?.choices?.length === 0 && (
-            <button onClick={clickNext}>Next</button>
-          )}
-          {storyData?.choices?.length === 0 && !storyData?.disable_go_back && (
-            <button onClick={clickBack}>Back</button>
-          )}
+          <div className="button-container">
+            {storyData?.choices?.length === 0 && (
+              <button className="button next-button" onClick={clickNext}>
+                Next
+              </button>
+            )}
+            {storyData?.choices?.length === 0 &&
+              !storyData?.disable_go_back && (
+                <button className="button back-button" onClick={clickBack}>
+                  Back
+                </button>
+              )}
+          </div>
         </div>
       </div>
     </div>
