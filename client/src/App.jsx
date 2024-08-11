@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import "./App.css";
+import donateIcon from './assets/donate.png';
 import {
   ApolloClient,
   InMemoryCache,
@@ -85,10 +86,15 @@ const App = () => {
                 href="/donation"
                 className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
               >
-                <img
+                {/* <img
                   className="object-cover object-center w-full h-full rounded-full"
                   src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
-                />
+                /> */}
+                <img
+                  className="object-cover object-center w-full h-full rounded-full"
+                  src={donateIcon}
+                  alt="an item of Dr. Conner"
+              /> 
               </a>
             </div>
           </div>
