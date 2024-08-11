@@ -64,7 +64,7 @@ const resolvers = {
           story_id: foundStory.story_id,
           story:
             args.nextStoryId == 2
-              ? foundStory.story + " " + context.user.email
+              ? foundStory.story + " " + context.user.username
               : foundStory.story,
         };
       }
