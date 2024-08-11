@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+//import { useNavigate } from "react-router-dom";
 import StorySection from "../components/StorySection.jsx";
 import { GO_NEXT_STORY } from "../utils/mutations.js";
 import { GET_ME } from "../utils/queries.js";
@@ -7,29 +7,17 @@ import { useMutation, useQuery } from "@apollo/client";
 
 function Game() {
   const [storyData, setStoryData] = useState({});
-
-  const [storyId, setStoryId] = useState(1);// Initialize storyId with a default value
+ const [storyId, setStoryId] = useState(1);// Initialize storyId with a default value
   const [goNextStory, { loading: mutationLoading }] =
     useMutation(GO_NEXT_STORY, {
       refetchQueries: GET_ME
     });
 
-  // const { loading } = useQuery(GET_ME, {
-  //   variables: { storyId: storyData.story_id || 1 },
-  //   onCompleted: async (data) => {
-  //     const response = await goNextStory({
-  //       variables: {
-  //         nextStoryId: data.me.current_story,
-  //       },
-  //     });
-  //     setStoryData(response.data.goNextStory);
-  //   },
-  // });
   const { loading } = useQuery(GET_ME, {
     onCompleted: async (data) => {
       const response = await goNextStory({
         variables: {
-          nextStoryId: data.me.current_story, // Use current_story from the user data
+          nextStoryId: data.me.current_story || 1, // Use current_story from the user data
         },
       });
       setStoryData(response.data.goNextStory);
@@ -52,61 +40,14 @@ function Game() {
     });
 
     setStoryData(response.data.goNextStory);
-
-  const [goNextStory, { loading, error }] = useMutation(GO_NEXT_STORY);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await goNextStory({
-          variables: {
-            nextStoryId: 1,
-          },
-        });
-        setStoryData(response.data.goNextStory);
-      } catch (err) {
-        console.error("Error fetching story data:", err);
-      }
-    };
-
-    fetchData();
-  }, [goNextStory]); 
-
-  if (loading) {
-    return <h1>Please wait. Still loading...</h1>;
   }
 
-  if (error) {
-    return <h1>Error loading story data. Please try again later.</h1>;
-
-  }
-
-  const clickNext = async () => {
-    try {
-      const response = await goNextStory({
-        variables: {
-          nextStoryId: parseInt(storyData.story_id) + 1,
-        },
-      });
-      setStoryData(response.data.goNextStory);
-    } catch (err) {
-      console.error("Error on clickNext:", err);
-    }
-  };
-
-  const clickBack = async () => {
-    try {
-      const response = await goNextStory({
-        variables: {
-          nextStoryId: parseInt(storyData.story_id) - 1,
-        },
-      });
-      setStoryData(response.data.goNextStory);
-    } catch (err) {
-      console.error("Error on clickBack:", err);
-    }
-  };
-
+  async function clickBack() {
+    const response = await goNextStory({
+      variables: {
+        nextStoryId: parseInt(storyData.story_id) - 1,
+      },
+    });
 
     setStoryData(response.data.goNextStory);
   }
@@ -166,36 +107,10 @@ function Game() {
                 ) : null}
               </>
             )}
-
-  return (
-    <div className="game-page">
-      <div className="story-container">
-        <div className="choice-buttons-container">
-          <StorySection
-            initialStory={storyData?.story}
-            initialIsDead={false}
-            initialEscaped={false}
-            choices={storyData?.choices}
-            onChoiceSelect={() => {}}
-          />
-
-          <div className="button-container">
-            {storyData?.choices?.length === 0 && (
-              <button className="button next-button" onClick={clickNext}>
-                Next
-              </button>
-            )}
-            {storyData?.choices?.length === 0 &&
-              !storyData?.disable_go_back && (
-                <button className="button back-button" onClick={clickBack}>
-                  Back
-                </button>
-              )}
-
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
