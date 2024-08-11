@@ -35,7 +35,7 @@ bash
 4. After signing in or creating an account, you will return to the homepage.
 5. Click "Start Game" to begin the experience.
 6. Throughout the game, you will be prompted to enter your name and make various choices.
-7. If you make an incorrect choice, you will be given an option to return to the homepage and try again.
+7. If you make an incorrect choice, you will be directed to the "you are dead" screen will be given an option to return to the homepage and try again.
 
 Enjoy the game!
 
