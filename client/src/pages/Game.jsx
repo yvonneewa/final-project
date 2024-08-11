@@ -3,14 +3,17 @@ import StorySection from "../components/StorySection.jsx";
 import { GO_NEXT_STORY } from "../utils/mutations.js";
 import { GET_ME } from "../utils/queries.js";
 import { useMutation, useQuery } from "@apollo/client";
+import ProgressBar from "../components/ProgressBar/index.jsx";
 
 function Game() {
   const [storyData, setStoryData] = useState({});
- const [storyId, setStoryId] = useState(1);// Initialize storyId with a default value
-  const [goNextStory, { loading: mutationLoading }] =
-    useMutation(GO_NEXT_STORY, {
-      refetchQueries: GET_ME
-    });
+  const [storyId, setStoryId] = useState(1); // Initialize storyId with a default value
+  const [goNextStory, { loading: mutationLoading }] = useMutation(
+    GO_NEXT_STORY,
+    {
+      refetchQueries: GET_ME,
+    }
+  );
 
   const { loading } = useQuery(GET_ME, {
     onCompleted: async (data) => {
@@ -22,7 +25,7 @@ function Game() {
       setStoryData(response.data.goNextStory);
       setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
     },
-    });
+  });
 
   if (loading || mutationLoading) {
     return (
@@ -39,6 +42,7 @@ function Game() {
     });
 
     setStoryData(response.data.goNextStory);
+    setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
   }
 
   async function clickBack() {
@@ -49,6 +53,7 @@ function Game() {
     });
 
     setStoryData(response.data.goNextStory);
+    setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
   }
   async function handleGoToGameOver() {
     // Call goNextStory with nextStoryId set to 1
@@ -80,9 +85,9 @@ function Game() {
 
   return (
     <>
+      <ProgressBar storyId={storyId} />
       <div className="game-page">
         <div className="story-container">
-          
           <div className="choice-buttons-container">
             {/* <h1>This is the game page!</h1> */}
             <StorySection
@@ -90,7 +95,6 @@ function Game() {
               initialIsDead={false}
               initialEscaped={false}
               choices={storyData?.choices}
-              
               onChoiceSelect={async (nextStoryId) => {
                 const response = await goNextStory({
                   variables: {
@@ -98,21 +102,22 @@ function Game() {
                   },
                 });
                 setStoryData(response.data.goNextStory);
+                setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
               }}
             />
 
             {storyData.is_dead ? (
               <>
-                <button
-                onClick={handleGoToGameOver}
-                >
-                  Next
-                </button>
+                <button onClick={handleGoToGameOver}>Next</button>
               </>
             ) : (
               <>
                 {storyData?.choices?.length == 0 ? (
-                  <button onClick={storyData.story_id == 22 ? goToEscape : clickNext}>Next</button>
+                  <button
+                    onClick={storyData.story_id == 22 ? goToEscape : clickNext}
+                  >
+                    Next
+                  </button>
                 ) : null}
                 {storyData?.choices?.length == 0 &&
                 !storyData?.disable_go_back ? (

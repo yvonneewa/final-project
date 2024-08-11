@@ -1,5 +1,9 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+} from "react-router-dom";
 
 import App from "./App.jsx";
 import Home from "./pages/Home";
@@ -10,9 +14,7 @@ import Login from "./pages/Login";
 import auth from "./utils/auth.js";
 import Dead from "./pages/Dead.jsx";
 import Escape from "./pages/Escape.jsx";
-
-
-
+import Donation from "./pages/Donation.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +44,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/game",
-        loader: () => (!auth.loggedIn() ? redirect('/signup') : null),
+        loader: () => (!auth.loggedIn() ? redirect("/signup") : null),
         element: <Game />,
+      },
+
+      {
+        path: "/donation",
+        element: <Donation />,
       },
       // {
       //   path: "/profiles/:profileId",

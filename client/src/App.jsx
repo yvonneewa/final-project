@@ -34,8 +34,8 @@ const App = () => {
 
   const handleLogout = () => {
     try {
-      localStorage.removeItem('id_token');
-      navigate('/'); // Redirect to home or login page
+      localStorage.removeItem("id_token");
+      navigate("/"); // Redirect to home or login page
     } catch (error) {
       console.error("Logout failed: ", error);
     }
@@ -48,7 +48,7 @@ const App = () => {
     return lastWord === "game";
   }
 
-  const loggedIn = !!localStorage.getItem('id_token');
+  const loggedIn = !!localStorage.getItem("id_token");
 
   return (
     <ApolloProvider client={client}>
@@ -72,16 +72,27 @@ const App = () => {
               </>
             )}
           </nav>
-          {checkGameRoute() ? (
-            <progress className="progress is-medium" value="60" max="100">
-              60%
-            </progress>
-          ) : null}
+          {checkGameRoute() ? null : null}
         </header>
         <main>
           <Outlet />
         </main>
-        <footer></footer>
+        <footer>
+          <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+            <div>
+              <a
+                title="Donate to us"
+                href="/donation"
+                className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
+              >
+                <img
+                  className="object-cover object-center w-full h-full rounded-full"
+                  src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
+                />
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </ApolloProvider>
   );
