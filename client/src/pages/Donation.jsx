@@ -110,7 +110,7 @@ function Donation() {
                       </span>
                     </div>
                     <div className="flex-grow pl-3">
-                      <span>Scott Windon</span>
+                      <span>Robyn Banks</span>
                     </div>
                   </div>
                   <div className="w-full flex items-center">
@@ -120,7 +120,7 @@ function Donation() {
                       </span>
                     </div>
                     <div className="flex-grow pl-3">
-                      <span>123 George Street, Sydney, NSW 2000 Australia</span>
+                      <span>123 P. Sherman 42 Wallaby Way Australia</span>
                     </div>
                   </div>
                 </div>
