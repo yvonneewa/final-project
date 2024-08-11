@@ -371,3 +371,41 @@ header {
     padding-right: 0.75rem;
   }
 }
+.escape-page {
+  background-color: black;
+  color: white;
+  font-family: 'Creepster', cursive;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.credits {
+  animation: scroll-up 15s linear;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.credits-play-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
