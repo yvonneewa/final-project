@@ -9,8 +9,7 @@ import Login from "./pages/Login";
 
 import auth from "./utils/auth.js";
 import Dead from "./pages/Dead.jsx";
-
-
+import Escape from "./pages/Escape.jsx";
 
 
 const router = createBrowserRouter([
@@ -34,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/gameover",
         element: <Dead />,
+      },
+      {
+        path: "/escaped",
+        element: <Escape />,
       },
       {
         path: "/game",
