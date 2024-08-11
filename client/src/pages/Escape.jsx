@@ -10,7 +10,7 @@ const Escape = () => {
       <div className="credits-container">
         <div className="credits">
           <div className="fade-in-title">
-            <h1 className="creepster">You Are Escaped!</h1>
+            <h1 className="creepster">You've Escaped!</h1>
             <p>Game Design: Yvonne, Shelly</p>
             <p>Story: TJ</p>
             <p>Development: Yvonne, Shelly</p>
