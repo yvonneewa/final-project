@@ -64,6 +64,20 @@ function Game() {
     window.location.href = "/gameover";
   }
 
+  async function goToEscape() {
+    // Call goNextStory with nextStoryId set to 1
+    const response = await goNextStory({
+      variables: {
+        nextStoryId: 1,
+      },
+    });
+    setStoryData(response.data.goNextStory);
+    setStoryId(1); // Set storyId to 1
+
+    // Redirect to /gameover after updating story data
+    window.location.href = "/escaped";
+  }
+
   return (
     <>
       <div className="game-page">
@@ -98,7 +112,7 @@ function Game() {
             ) : (
               <>
                 {storyData?.choices?.length == 0 ? (
-                  <button onClick={clickNext}>Next</button>
+                  <button onClick={storyData.story_id == 22 ? goToEscape : clickNext}>Next</button>
                 ) : null}
                 {storyData?.choices?.length == 0 &&
                 !storyData?.disable_go_back ? (
