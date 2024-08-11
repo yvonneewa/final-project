@@ -29,14 +29,13 @@ bash
 ## Usage
 
 1. Visit the website: [https://deadend.onrender.com](https://deadend.onrender.com).
-2. You will be greeted by a friendly skull and the game title.
-3. Click the "Start Game" button in the center of the screen. Before doing this, you should sign in:
-   - Click the "Login" button in the upper left.
-   - Sign in on the left side of the screen. If you don’t have an account, you can create one easily.
-4. After signing in or creating an account, you will return to the homepage with the friendly skull.
+2. You will be greeted by the start button and the game title.
+3. Click the "Start Game" button in the center of the screen it will take you to the login/signup page. But, or you can just:
+   - Click the "Login/siginup" button in the upper left.
+4. After signing in or creating an account, you will return to the homepage.
 5. Click "Start Game" to begin the experience.
 6. Throughout the game, you will be prompted to enter your name and make various choices.
-7. If you make an incorrect choice, you will be given an option to return to the homepage and try again.
+7. If you make an incorrect choice, you will be directed to the "you are dead" screen will be given an option to return to the homepage and try again.
 
 Enjoy the game!
 
@@ -59,6 +58,7 @@ Enjoy the game!
 - Yvonne: [GitHub Profile](https://github.com/yvonneewa)
 
 ## References
+- www.fontspace.com for the fonts
 - tutor Joem
 - xpert learning
 - tailwind - css
