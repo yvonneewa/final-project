@@ -67,6 +67,7 @@ const Login = () => {
           <form onSubmit={handleLoginSubmit} className="form">
             <label className="text-sm font-medium">Username</label>
             <input
+            className="blacktext"
               type="text"
               name="username"
               value={loginName}
@@ -75,6 +76,7 @@ const Login = () => {
             />
             <label className="text-sm font-medium">Password</label>
             <input
+            className="blacktext"
               type="password"
               name="password"
               placeholder="********"
@@ -90,6 +92,7 @@ const Login = () => {
           <form onSubmit={handleSignupSubmit} className="form">
             <label className="text-sm font-medium">Username</label>
             <input
+            className="blacktext"
               type="text"
               name="username"
               value={signupName}
@@ -98,6 +101,7 @@ const Login = () => {
             />
             <label className="text-sm font-medium">Email</label>
             <input
+            className="blacktext"
               type="email"
               name="email"
               value={signupEmail}
@@ -106,6 +110,7 @@ const Login = () => {
             />
             <label className="text-sm font-medium">Password</label>
             <input
+            className="blacktext"
               type="password"
               name="password"
               placeholder="********"

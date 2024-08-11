@@ -9,6 +9,10 @@ input {
   border-radius: 4px;
 }
 
+.blacktext{
+  color: #000 !important;
+}
+
 @font-face {
   font-family: 'MyCustomFont1';
   src: url('/fonts/NightmareStory-BWV8V.ttf') format('truetype');
@@ -30,7 +34,7 @@ input {
 
 @font-face {
   font-family: 'MyCustomFont4';
-  src: url('fonts/NightmarePills-BV2w.ttf') format('truetype');
+  src: url('/fonts/NightmarePills-BV2w.ttf') format('truetype');
   font-weight: bold;
 }
 
