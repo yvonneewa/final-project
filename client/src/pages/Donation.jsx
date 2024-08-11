@@ -14,7 +14,7 @@ function Donation() {
                   <div className="w-full flex items-center">
                     <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
                       <img
-                        src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                        src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn-icons-png.freepik.com%2F512%2F1234%2F1234858.png"
                         alt=""
                       />
                     </div>
