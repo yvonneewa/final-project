@@ -17,6 +17,7 @@ const resolvers = {
         return foundUser;
       }
     },
+    
     story: async (_, {storyId}) =>{
       try {
         const story = await Story.findOne({ story_id: storyId });
