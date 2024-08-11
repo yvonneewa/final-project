@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import StorySection from "../components/StorySection.jsx";
 import { GO_NEXT_STORY } from "../utils/mutations.js";
 import { GET_ME } from "../utils/queries.js";
