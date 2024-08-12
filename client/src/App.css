@@ -388,7 +388,7 @@ header {
 }
 
 .credits {
-  animation: scroll-up 15s linear;
+  animation: scroll-up 18s linear forwards;
 }
 
 @keyframes scroll-up {
@@ -396,10 +396,46 @@ header {
     transform: translateY(100%);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-200%);
   }
 }
-
+/*
+.fade-in-escape-title {
+  opacity: 0;
+  color: white;
+  animation: fadeIn 5s ease-in-out forwards;
+  animation-delay: 15s; 
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+ .thank-you {
+  color: white;
+  font-size: 2em;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInText 5s ease-in-out forwards;
+  animation-delay: 20s; 
+}
+*/ 
+.thank-you {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-size: 8rem;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 0;
+  /* transition: opacity 2s ease-in; */
+  animation: fadeInText 5s ease-in-out forwards;
+  animation-delay: 15s; 
+}
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* 
 .credits-play-button {
   display: inline-block;
   padding: 10px 20px;
@@ -408,4 +444,28 @@ header {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
+} */
+
+.black-screen{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  z-index: 10;
+  display: none;
+  /* opacity: 0; */
+  transition: display 2s ease-out;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .game-page {
+    padding: 20px;
+  }
+
+  .donation-header {
+    flex-direction: column;
+  }
 }

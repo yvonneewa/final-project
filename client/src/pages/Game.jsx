@@ -56,35 +56,23 @@ function Game() {
     setStoryId(response.data.goNextStory.story_id); // Update storyId based on the new story
   }
   async function handleGoToGameOver() {
-    // Call goNextStory with nextStoryId set to 1
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: 1,
-      },
-    });
-    setStoryData(response.data.goNextStory);
-    setStoryId(1); // Set storyId to 1
-
-    // Redirect to /gameover after updating story data
+    window.scrollTo(0, 0);
+    document.querySelector(".black-screen").style.display = "block";
     window.location.href = "/gameover";
   }
 
   async function goToEscape() {
-    // Call goNextStory with nextStoryId set to 1
-    const response = await goNextStory({
-      variables: {
-        nextStoryId: 1,
-      },
-    });
-    setStoryData(response.data.goNextStory);
-    setStoryId(1); // Set storyId to 1
-
-    // Redirect to /gameover after updating story data
+    window.scrollTo(0, 0);
+    document.querySelector(".black-screen").style.display = "block";
     window.location.href = "/escaped";
   }
 
   return (
     <>
+    {/* BLACK SCREEN */}
+      <div className="black-screen">
+
+      </div>
       <ProgressBar storyId={storyId} />
       <div className="game-page">
         <div className="story-container">

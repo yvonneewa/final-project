@@ -1,6 +1,24 @@
-import React from "react";
+import { useMutation } from "@apollo/client";
+import React, { useEffect } from "react";
+import { GO_NEXT_STORY } from "../utils/mutations";
 
 const Dead = () => {
+  const [goNextStory] = useMutation(
+    GO_NEXT_STORY
+  );
+
+  useEffect(() => {
+    async function restartStory () {
+      await goNextStory({
+        variables: {
+          nextStoryId: 1,
+        },
+      });
+    }
+
+    restartStory();
+  }, [])
+
   const handleStartClick = (e) => {
     e.preventDefault();
     window.location.href = "/";
