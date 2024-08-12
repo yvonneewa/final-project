@@ -23,16 +23,6 @@ const userSchema = new Schema({
       type: Number,
       default: 1
   },
-  // current_story: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Story", // story model name
-  // },
-  // thoughts: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Thought',
-  //   },
-  // ],
 });
 
 userSchema.pre("save", async function (next) {

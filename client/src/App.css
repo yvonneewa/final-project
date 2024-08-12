@@ -399,26 +399,7 @@ header {
     transform: translateY(-200%);
   }
 }
-/*
-.fade-in-escape-title {
-  opacity: 0;
-  color: white;
-  animation: fadeIn 5s ease-in-out forwards;
-  animation-delay: 15s; 
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
- .thank-you {
-  color: white;
-  font-size: 2em;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeInText 5s ease-in-out forwards;
-  animation-delay: 20s; 
-}
-*/ 
+
 .thank-you {
   position: absolute;
   top: 0;
@@ -435,16 +416,6 @@ header {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-/* 
-.credits-play-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ff0000;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-} */
 
 .black-screen{
   width: 100vw;

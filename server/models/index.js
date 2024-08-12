@@ -1,5 +1,3 @@
-
-
 const User = require('./User');
 const Story = require('./Story');
 
