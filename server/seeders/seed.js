@@ -3,13 +3,11 @@ const db = require('../config/connection');
 const { User, Story } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const storyData = require('./storyData.json');
-const cleanDB = require('./cleanDB');
+//const cleanDB = require('./cleanDB');
 
 const seedDatabase = async () => {
   try {
     await db;
- 
-
     await User.deleteMany({});
     await Story.deleteMany({});
 

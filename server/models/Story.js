@@ -1,7 +1,4 @@
-// const { Model, DataTypes } = require("sequelize");
-
 const { Schema, model } = require('mongoose');
-// const sequelize = require("../config/connection");
 
 const choiceSchema = new Schema({
   text: {

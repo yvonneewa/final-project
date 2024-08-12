@@ -41,15 +41,22 @@ Enjoy the game!
 
 ## Concept
 
-![alt text](image-2.png)
+![alt text](./screenshots/image-2.png)
 
 ## Homepage
 
-![alt text](image-1.png)
+![alt text](./screenshots/image-1.png)
+
+## SignUp/Login
+
+![alt text](./screenshots/signup.png)
+
 ## Game
 
-![alt text](image.png)
+![alt text](./screenshots/image.png)
+## Donation
 
+![alt text](./screenshots/donation.png)
 
 
 ## Credits
@@ -59,7 +66,7 @@ Enjoy the game!
 
 ## References
 - www.fontspace.com for the fonts
-- tutor Joem
+- tutor Joem Casusi
 - xpert learning
 - tailwind - css
 - Images:
