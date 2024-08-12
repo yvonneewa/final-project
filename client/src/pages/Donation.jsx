@@ -11,7 +11,7 @@ function Donation() {
             <div className="-mx-3 md:flex items-start">
               <div className="px-3 md:w-7/12 lg:pr-10">
                 <div className="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 pb-6">
-                  <div className="w-full flex items-center">
+                  <div className="w-full flex items-center donation-header">
                     <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
                       <img
                         src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn-icons-png.freepik.com%2F512%2F1234%2F1234858.png"

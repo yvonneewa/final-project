@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import donateIcon from './assets/donate.png';
+import donateIcon from "./assets/donate.png";
 import {
   ApolloClient,
   InMemoryCache,
@@ -49,6 +49,13 @@ const App = () => {
     return lastWord === "game";
   }
 
+  function checkDonationRoute() {
+    const currentUrl = window.location.href;
+    const splitUrl = currentUrl.split("/");
+    const lastWord = splitUrl[splitUrl.length - 1];
+    return lastWord === "donation";
+  }
+
   const loggedIn = !!localStorage.getItem("id_token");
 
   return (
@@ -57,9 +64,18 @@ const App = () => {
         <header className="display-flex justify-space-between align-center p-2">
           <nav>
             {loggedIn ? (
-              <button className="no-button" id="logout" onClick={handleLogout}>
-                Logout
-              </button>
+              <div className="nav-links">
+                <a href="/" className="nav-link home-link">
+                  Home
+                </a>
+                <button
+                  className="no-button"
+                  id="logout"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <>
                 <div className="nav-links">
@@ -78,27 +94,26 @@ const App = () => {
         <main>
           <Outlet />
         </main>
-        <footer>
-          <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-            <div>
-              <a
-                title="Donate to us"
-                href="/donation"
-                className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
-              >
-                {/* <img
-                  className="object-cover object-center w-full h-full rounded-full"
-                  src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
-                /> */}
-                <img
-                  className="object-cover object-center w-full h-full rounded-full"
-                  src={donateIcon}
-                  alt="an item of Dr. Conner"
-              /> 
-              </a>
+
+        {checkDonationRoute() ? null : (
+          <footer>
+            <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+              <div>
+                <a
+                  title="Donate to us"
+                  href="/donation"
+                  className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
+                >
+                  <img
+                    className="object-cover object-center w-full h-full rounded-full"
+                    src={donateIcon}
+                    alt="an item of Dr. Conner"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        )}
       </div>
     </ApolloProvider>
   );

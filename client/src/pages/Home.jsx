@@ -14,7 +14,7 @@ const Home = () => {
         <div className="fade-in-title">
           <h1 className="creepster">Dead End</h1>
         </div>
-        <div align="center">
+        <div align="center" >
           <a
             href="/"
             id="start-link"
