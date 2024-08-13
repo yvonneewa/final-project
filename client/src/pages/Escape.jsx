@@ -23,7 +23,7 @@ useEffect(() => {
       <div className="credits-container">
         <div className="credits">
           <div className="fade-in-title">
-            <h1 className="creepster">You&apos;ve Escaped!</h1>
+            <h1 className="creepster3">You&apos;ve Escaped!</h1>
             <p>Game Design: Yvonne, Shelly</p>
             <p>Story: TJ (we miss you!)   </p>
             <p>Development: Yvonne, Shelly</p>

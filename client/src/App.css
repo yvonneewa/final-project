@@ -206,6 +206,20 @@ header {
   text-align: center;
 }
 
+.creepster2 {
+  font-family: 'MyCustomFont1', cursive;
+  font-size: 12rem; 
+  color: #782a2a; 
+  text-align: center;
+}
+
+.creepster3 {
+  font-family: 'MyCustomFont1', cursive;
+  font-size: 12rem; 
+  color: #3797d3; 
+  text-align: center;
+}
+
 .fade-in-title {
   animation: fadeIn 20s;
 }
@@ -230,7 +244,7 @@ header {
 .play-button {
   padding: 30px 60px; /* Large button padding */
   font-size: 3rem; /* Larger font size */
-  color: #ff6666; /* Button text color */
+  color: #782a2a; /* Button text color */
   font-family: 'Creepy-Regular', sans-serif;
   text-align: center;
   display: block;
@@ -373,9 +387,9 @@ header {
 }
 .escape-page {
   background-color: black;
-  color: white;
+  color: rgb(249, 245, 245);
   font-family: 'Creepster', cursive;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   position: relative;
 }
@@ -420,12 +434,13 @@ header {
 }
 */ 
 .thank-you {
+  color: #782a2a;
   position: absolute;
   top: 0;
   width: 100%;
   font-size: 8rem;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0px;
   opacity: 0;
   /* transition: opacity 2s ease-in; */
   animation: fadeInText 5s ease-in-out forwards;
