@@ -25,7 +25,7 @@ useEffect(() => {
           <div className="fade-in-title">
             <h1 className="creepster">You&apos;ve Escaped!</h1>
             <p>Game Design: Yvonne, Shelly</p>
-            <p>Story: TJ (we miss you!)   </p>
+            <p>Story: TJ    (we miss you!)</p>
             <p>Development: Yvonne, Shelly</p>
             <p>Special Thanks: Joem Casusi</p>
             </div>
