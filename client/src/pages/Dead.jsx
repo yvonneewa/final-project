@@ -30,7 +30,7 @@ const Dead = () => {
       <div className="col-md-10">
         <div className="title-container"></div>
         <div className="fade-in-title">
-          <h1 className="creepster">You Are Dead</h1>
+          <h1 className="creepster2">You Are Dead</h1>
         </div>
         <div align="center">
           <a
